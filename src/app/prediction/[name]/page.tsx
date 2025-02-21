@@ -1,5 +1,3 @@
-import { log } from "console"
-
 
 const getPredictedAge = async (name: string) => {
   const res = await fetch(`https://api.agify.io/?name=${name}`)
@@ -28,9 +26,7 @@ export default async function Page({ params }: Params) {
     genderData,
     countryData
   ])
-
   // console.log(age, gender, country);
-
   return (
     <main style={{ minHeight: '100vh' }} className="flex justify-center items-center flex-col">
       <h1 className="text-8xl font-bold border border-dashed p-5">{params.name}</h1>
