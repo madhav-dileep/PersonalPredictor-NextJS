@@ -12,20 +12,20 @@ const getPredictedCountry = async (name: string) => {
   return res.json()
 }
 
-interface Params {
+type PageProps = {
   params: { name: string };
-}
+};
 
-export default async function Page({ params }: Params) {
-  const ageData = getPredictedAge(params.name)
-  const genderData = getPredictedGender(params.name)
-  const countryData = getPredictedCountry(params.name)
+export default async function Page({ params }: PageProps) {
+  const ageData = await getPredictedAge(params.name);
+  const genderData = await getPredictedGender(params.name);
+  const countryData = await getPredictedCountry(params.name);
 
   const [age, gender, country] = await Promise.all([
     ageData,
     genderData,
     countryData
-  ])
+  ]);
   // console.log(age, gender, country);
   return (
     <main style={{ minHeight: '100vh' }} className="flex justify-center items-center flex-col">
