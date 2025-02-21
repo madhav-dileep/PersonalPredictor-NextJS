@@ -29,7 +29,7 @@ export default async function Page({ params }: Params) {
     countryData
   ])
 
-  console.log(age, gender, country);
+  // console.log(age, gender, country);
 
   return (
     <main style={{ minHeight: '100vh' }} className="flex justify-center items-center flex-col">
